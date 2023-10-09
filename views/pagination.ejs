@@ -1,0 +1,28 @@
+<nav aria-label="Page navigation example">
+	<ul class="pagination justify-content-center">
+		<form class="pagination" action="/prev" method="POST">
+			<% if(prev === null) {%>
+			<li class="page-item disabled">
+				<button class="page-link" tabindex="-1" disabled>Previous</button>
+			</li>
+			<% }else{ %>
+			<li class="page-item">
+				<button value="<%= prev %>" class="page-link" tabindex="-1">
+					Previous
+				</button>
+			</li>
+			<% } %>
+		</form>
+		<form class="pagination" action="/next" method="POST">
+			<% if(next === null) {%>
+			<li class="page-item disabled">
+				<button class="page-link" disabled>Next</button>
+			</li>
+			<% }else{ %>
+			<li class="page-item">
+				<button value="<%= next %>" class="page-link">Next</button>
+			</li>
+			<% } %>
+		</form>
+	</ul>
+</nav>
